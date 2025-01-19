@@ -1,0 +1,14 @@
+services:
+  client-database:
+    image: mariadb:10.4.11
+    container_name: promotions_client_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: promotions_client
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
